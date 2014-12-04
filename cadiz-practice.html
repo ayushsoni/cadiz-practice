@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css">
+	<title>Cadiz Memories</title>
+	<style type="text/css">
+		.small-pic {
+			width: 250px;
+			height: 250px;
+			padding: 1em;
+			margin-left: 9%;
+			cursor: pointer;
+		}
+
+	</style>
+	</head>
+	<div>
+
+		<p id="gallery">
+			<img class="small-pic" src="Pictures/img.jpg">
+			<img class="small-pic" src="Pictures/img1.jpg">
+			<img class="small-pic" src="Pictures/img2.jpg">
+			<img class="small-pic" src="Pictures/img3.jpg">
+			<img class="small-pic" src="Pictures/img4.jpg">
+			<img class="small-pic" src="Pictures/img5.jpg">
+			<img class="small-pic" src="Pictures/img6.jpg">
+			<img class="small-pic" src="Pictures/img7.jpg">
+			<img class="small-pic" src="Pictures/img8.jpg">
+			<img class="small-pic" src="Pictures/img9.jpg">
+			<img class="small-pic" src="Pictures/img10.jpg">
+			<img class="small-pic" src="Pictures/img11.jpg">
+			<img class="small-pic" src="Pictures/img12.jpg">
+			<img class="small-pic" src="Pictures/img13.jpg">
+			<img class="small-pic" src="Pictures/img14.jpg">
+			<img class="small-pic" src="Pictures/img15.jpg">
+			<img class="small-pic" src="Pictures/img16.jpg">
+			<img class="small-pic" src="Pictures/img17.jpg">
+			<img class="small-pic" src="Pictures/img18.jpg">
+			<img class="small-pic" src="Pictures/img19.jpg">
+			<img class="small-pic" src="Pictures/img20.jpg">
+			<img class="small-pic" src="Pictures/img21.jpg">
+			<img class="small-pic" src="Pictures/img22.jpg">
+			<img class="small-pic" src="Pictures/img23.jpg">
+			<img class="small-pic" src="Pictures/img24.jpg">
+			<img class="small-pic" src="Pictures/img25.jpg">
+			<img class="small-pic" src="Pictures/img26.jpg">
+			<img class="small-pic" src="Pictures/img27.jpg">
+			<img class="small-pic" src="Pictures/img28.jpg">
+			<img class="small-pic" src="Pictures/img29.jpg">
+			<img class="small-pic" src="Pictures/img30.jpg">
+			<img class="small-pic" src="Pictures/img31.jpg">
+			<img class="small-pic" src="Pictures/img32.jpg">
+		</p>
+	</div>
+
+	<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+    	<div class="modal-dialog">
+    		<div class="modal-content">     
+    			<div class="modal-body">  
+       			</div>
+      		</div><!-- /.modal-content -->
+    	</div><!-- /.modal-dialog -->
+    </div><!-- /.modal -->
+    <script src="https://code.jquery.com/jquery-1.10.2.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+
+	<script type="text/javascript">
+	$(document).ready(function() {
+		$(".small-pic").on('click',function() {
+			var src = $(this).attr('src');
+            var img = '<img src="' + src + '" class="img-responsive"/>';
+
+            var index = $(this).parent('p').index();
+            console.log(index);
+                      $('#myModal').modal();
+            $('#myModal').on('shown.bs.modal', function(){
+                	$('#myModal .modal-body').html(img);
+                });
+                $('#myModal').on('hidden.bs.modal', function(){
+                    $('#myModal .modal-body').html('');
+                });
+           });  
+        })
+		</script>
+	</body>
+</html>
